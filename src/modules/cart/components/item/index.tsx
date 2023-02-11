@@ -12,6 +12,8 @@ type ItemProps = {
 }
 
 const Item = ({ item, region }: ItemProps) => {
+  console.log(item)
+  console.log("item")
   const { updateItem, deleteItem } = useStore()
 
   return (
@@ -54,7 +56,7 @@ const Item = ({ item, region }: ItemProps) => {
               onClick={() => deleteItem(item.id)}
             >
               <Trash size={14} />
-              <span>Remove</span>
+              <span>Eliminar</span>
             </button>
           </div>
           <div>

@@ -21,7 +21,7 @@ const CartDropdown = () => {
     <div className="h-full z-50" onMouseEnter={open} onMouseLeave={close}>
       <Popover className="relative h-full">
         <Link href="/cart" passHref>
-          <Popover.Button className="h-full">{`My Bag (${totalItems})`}</Popover.Button>
+          <Popover.Button className="h-full">{`Cesta (${totalItems})`}</Popover.Button>
         </Link>
         <Transition
           show={state}
@@ -38,7 +38,7 @@ const CartDropdown = () => {
             className="hidden small:block absolute top-[calc(100%+1px)] right-0 bg-white border-x border-b border-gray-200 w-[382px] text-gray-900"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Shopping Bag</h3>
+              <h3 className="text-large-semi">Cesta de la compra</h3>
             </div>
             {cart && items?.length ? (
               <>
@@ -67,7 +67,7 @@ const CartDropdown = () => {
                                   </Link>
                                 </h3>
                                 <LineItemOptions variant={item.variant} />
-                                <span>Quantity: {item.quantity}</span>
+                                <span>Cantidad: {item.quantity}</span>
                               </div>
                               <div className="flex justify-end">
                                 <LineItemPrice
@@ -85,7 +85,7 @@ const CartDropdown = () => {
                                 onClick={() => deleteItem(item.id)}
                               >
                                 <Trash size={14} />
-                                <span>Remove</span>
+                                <span>Borrar</span>
                               </button>
                             </div>
                           </div>
@@ -97,7 +97,7 @@ const CartDropdown = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-gray-700 font-semibold">
                       Subtotal{" "}
-                      <span className="font-normal">(incl. taxes)</span>
+                      <span className="font-normal">(IVA Incluido)</span>
                     </span>
                     <span className="text-large-semi">
                       {formatAmount({
@@ -109,7 +109,7 @@ const CartDropdown = () => {
                   </div>
                   <Link href="/cart" passHref>
                     <a>
-                      <Button>Go to bag</Button>
+                      <Button>Ir a la cesta</Button>
                     </a>
                   </Link>
                 </div>
@@ -120,12 +120,12 @@ const CartDropdown = () => {
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>Su cesta está vacía.</span>
                   <div>
                     <Link href="/store">
                       <a>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">Ver todos los productos</span>
+                        <Button onClick={close}>Ver productos</Button>
                       </a>
                     </Link>
                   </div>

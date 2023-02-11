@@ -13,12 +13,14 @@ type LineItemPriceProps = {
 const LineItemPrice = ({
   item,
   region,
-  style = "default",
+  style = "default",  
 }: LineItemPriceProps) => {
   const originalPrice =
     (item.variant as CalculatedVariant).original_price * item.quantity
-  const hasReducedPrice = (item.total || 0) < originalPrice
-
+  const hasReducedPrice = (item.unit_price || 0) < originalPrice
+  console.log("item.total " + item.total)
+  console.log("original price "+ originalPrice)
+  console.log("hasreducedprice " + hasReducedPrice) 
   console.log(item)
 
   return (
@@ -29,7 +31,7 @@ const LineItemPrice = ({
         })}
       >
         {formatAmount({
-          amount: item.total || 0,
+          amount: item.unit_price*item.quantity || 0,
           region: region,
           includeTaxes: false,
         })}
@@ -50,7 +52,7 @@ const LineItemPrice = ({
           </p>
           {style === "default" && (
             <span className="text-rose-600">
-              -{getPercentageDiff(originalPrice, item.total || 0)}%
+              -{getPercentageDiff(originalPrice, item.unit_price || 0)}%
             </span>
           )}
         </>

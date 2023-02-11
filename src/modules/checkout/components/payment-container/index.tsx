@@ -26,8 +26,8 @@ const PaymentInfoMap: Record<string, { title: string; description: string }> = {
     description: "Secure payment with PayPal",
   },
   manual: {
-    title: "Test payment",
-    description: "Test payment using medusa-payment-manual",
+    title: "BIZUM",
+    description: "Una vez comprobado el BIZUM se marcará como pagado. Tiene tres días para realizar el pago.",
   },
 }
 

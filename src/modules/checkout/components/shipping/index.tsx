@@ -97,10 +97,10 @@ const Shipping: React.FC<ShippingProps> = ({ cart }) => {
   return (
     <StepContainer
       index={sameBilling ? 2 : 3}
-      title="Delivery"
+      title="Envío"
       closedState={
         <div className="px-8 pb-8 text-small-regular">
-          <p>Enter your address to see available delivery options.</p>
+          <p>Escriba una dirección para ver los modos de envío.</p>
         </div>
       }
     >

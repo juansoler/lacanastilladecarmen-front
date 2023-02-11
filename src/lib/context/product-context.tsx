@@ -20,7 +20,10 @@ interface ProductContext {
   variant?: Variant
   maxQuantityMet: boolean
   options: Record<string, string>
+  optionsText: Record<string, string>
   updateOptions: (options: Record<string, string>) => void
+  updateOptionsText: (optionsText: Record<string, string>) => void
+
   increaseQuantity: () => void
   decreaseQuantity: () => void
   addToCart: () => void
@@ -39,6 +42,8 @@ export const ProductProvider = ({
 }: ProductProviderProps) => {
   const [quantity, setQuantity] = useState<number>(1)
   const [options, setOptions] = useState<Record<string, string>>({})
+  const [optionsText, setOptionsText] = useState<Record<string, string>>({})
+
   const [maxQuantityMet, setMaxQuantityMet] = useState<boolean>(false)
   const [inStock, setInStock] = useState<boolean>(true)
 
@@ -115,7 +120,19 @@ export const ProductProvider = ({
   }, [variant])
 
   const updateOptions = (update: Record<string, string>) => {
+    console.log("updateOptions")
+    console.log(update)
+    console.log("options")
+    console.log(options)
     setOptions({ ...options, ...update })
+  }
+
+  const updateOptionsText = (update: Record<string, string>) => {
+    console.log("updateOptionsText")
+    console.log(update)
+    console.log("options")
+    console.log(optionsText)
+    setOptionsText({ ...optionsText, ...update })
   }
 
   const addToCart = () => {
@@ -155,9 +172,11 @@ export const ProductProvider = ({
         disabled,
         inStock,
         options,
+        optionsText,
         variant,
         addToCart,
         updateOptions,
+        updateOptionsText,
         decreaseQuantity,
         increaseQuantity,
         formattedPrice,

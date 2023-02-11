@@ -387,6 +387,11 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
+"@corex/deepmerge@^4.0.29":
+  version "4.0.29"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.29.tgz#af9debf07d7f6b0d2a9d04a266abf2c1418ed2f6"
+  integrity sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==
+
 "@cypress/request@^2.88.10":
   version "2.88.10"
   resolved "https://registry.yarnpkg.com/@cypress/request/-/request-2.88.10.tgz#b66d76b07f860d3a4b8d7a0604d020c662752cce"
@@ -531,6 +536,40 @@
     winston "^3.3.3"
     yargs "^15.3.1"
 
+"@medusajs/medusa-cli@^1.3.5":
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa-cli/-/medusa-cli-1.3.5.tgz#4f8effab4ce26a4e02d757005d8577641fe09043"
+  integrity sha512-sAXWSiMYdZqzkjRmRUaCGPKDLmZ15tHZZqZQ1g8EdcuouFsGZaEVnx83vyo4q90AWOS4/SRrCXV6iDSwUCs8cA==
+  dependencies:
+    "@babel/polyfill" "^7.8.7"
+    "@babel/runtime" "^7.9.6"
+    axios "^0.21.1"
+    chalk "^4.0.0"
+    configstore "5.0.1"
+    core-js "^3.6.5"
+    dotenv "^8.2.0"
+    execa "^5.1.1"
+    fs-exists-cached "^1.0.0"
+    fs-extra "^10.0.0"
+    hosted-git-info "^4.0.2"
+    inquirer "^8.0.0"
+    is-valid-path "^0.1.1"
+    meant "^1.0.1"
+    medusa-core-utils "^1.1.31"
+    medusa-telemetry "0.0.15"
+    netrc-parser "^3.1.6"
+    open "^8.0.6"
+    ora "^5.4.1"
+    pg-god "^1.0.11"
+    prompts "^2.4.1"
+    regenerator-runtime "^0.13.5"
+    resolve-cwd "^3.0.0"
+    stack-trace "^0.0.10"
+    ulid "^2.3.0"
+    url "^0.11.0"
+    winston "^3.3.3"
+    yargs "^15.3.1"
+
 "@medusajs/medusa-js@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@medusajs/medusa-js/-/medusa-js-1.3.3.tgz#53f8f1728dae744a71f4e56050288f447a62e915"
@@ -542,7 +581,66 @@
     qs "^6.10.3"
     retry-axios "^2.6.0"
 
-"@medusajs/medusa@^1.6.2", "@medusajs/medusa@^1.6.3":
+"@medusajs/medusa-js@^1.3.4":
+  version "1.3.4"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa-js/-/medusa-js-1.3.4.tgz#482654df44672cd89ca38719cac0ca5aa046a1f6"
+  integrity sha512-ffypjrZeBC+Q+TUrR2vVDvjU3sA7NsqJ7QzSzGlG7U9UdKQ33HvH1pjt833akRufZckqyWK7Km6ujvedjQ0vXQ==
+  dependencies:
+    axios "^0.24.0"
+    form-data "^4.0.0"
+    qs "^6.10.3"
+    retry-axios "^2.6.0"
+
+"@medusajs/medusa@1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.7.0.tgz#89d1485cb1ccc6aba1f15ef372b7e8a2fd64b577"
+  integrity sha512-QU0lPsH6+lxVA2VwB6jCQfv6zJre8UGFdkv5xIiMoyQZjRt5SNQJdgnxQltUsN3870clv9hW/gyKm3Q9sUU3nA==
+  dependencies:
+    "@medusajs/medusa-cli" "^1.3.5"
+    "@types/ioredis" "^4.28.10"
+    "@types/lodash" "^4.14.168"
+    awilix "^8.0.0"
+    body-parser "^1.19.0"
+    bull "^3.12.1"
+    chokidar "^3.4.2"
+    class-transformer "^0.5.1"
+    class-validator "^0.13.1"
+    connect-redis "^5.0.0"
+    cookie-parser "^1.4.4"
+    core-js "^3.6.5"
+    cors "^2.8.5"
+    cross-spawn "^7.0.3"
+    express "^4.17.1"
+    express-session "^1.17.1"
+    fs-exists-cached "^1.0.0"
+    glob "^7.1.6"
+    ioredis "^4.17.3"
+    ioredis-mock "^5.6.0"
+    iso8601-duration "^1.3.0"
+    jsonwebtoken "^8.5.1"
+    medusa-core-utils "^1.1.36"
+    medusa-test-utils "^1.1.37"
+    morgan "^1.9.1"
+    multer "^1.4.2"
+    node-schedule "^2.1.0"
+    papaparse "^5.3.2"
+    passport "^0.4.0"
+    passport-http-bearer "^1.0.1"
+    passport-jwt "^4.0.0"
+    passport-local "^1.0.0"
+    pg "^8.5.1"
+    randomatic "^3.1.1"
+    redis "^3.0.2"
+    reflect-metadata "^0.1.13"
+    request-ip "^2.1.3"
+    resolve-cwd "^3.0.0"
+    scrypt-kdf "^2.0.1"
+    sqlite3 "^5.0.2"
+    ulid "^2.3.0"
+    uuid "^8.3.1"
+    winston "^3.2.1"
+
+"@medusajs/medusa@^1.6.2":
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/@medusajs/medusa/-/medusa-1.6.3.tgz#9bc5bb581c2d5d36b6f207ac82e5d86f5575b614"
   integrity sha512-sxGdY3crSHdDeY+FsUKvya5EP4aTeR9vP49/ML9G624TrP9Fo8+FXNGm8ASr5nJZd3iJNCE5TMa7NZhq7qy6Cw==
@@ -1468,6 +1566,14 @@ awilix@^4.2.3:
     camel-case "^4.1.2"
     glob "^7.1.6"
 
+awilix@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/awilix/-/awilix-8.0.0.tgz#556fa20e0f7b52b39479ed6b027ee054efd8f16a"
+  integrity sha512-9y4ejNj2nLu7ET8jtQPiI3Ibvu68iKcLbLy5pGsPy9HWWVyQhTT8YE+Ao7ZawTNXRWjosSy/r4QNmhaUt/ju0A==
+  dependencies:
+    camel-case "^4.1.2"
+    fast-glob "^3.2.12"
+
 aws-sign2@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/aws-sign2/-/aws-sign2-0.7.0.tgz#b46e890934a9591f2d2f6f86d7e6a9f1b3fe76a8"
@@ -1753,15 +1859,10 @@ camelcase@^6.2.0:
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-6.3.0.tgz#5685b95eb209ac9c0c177467778c9c84df58ba9a"
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
-caniuse-lite@^1.0.30001297, caniuse-lite@^1.0.30001313:
-  version "1.0.30001314"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001314.tgz#65c7f9fb7e4594fca0a333bec1d8939662377596"
-  integrity sha512-0zaSO+TnCHtHJIbpLroX7nsD+vYuOVjl3uzFbJO1wMVbuveJA0RK2WcQA9ZUIOiO0/ArMiMgHJLxfEZhQiC0kw==
-
-caniuse-lite@^1.0.30001332:
-  version "1.0.30001361"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001361.tgz#ba2adb2527566fb96f3ac7c67698ae7fc495a28d"
-  integrity sha512-ybhCrjNtkFji1/Wto6SSJKkWk6kZgVQsDq5QI83SafsF6FXv2JB4df9eEdH6g8sdGgqTXrFLjAxqBGgYoU3azQ==
+caniuse-lite@^1.0.30001297, caniuse-lite@^1.0.30001313, caniuse-lite@^1.0.30001332:
+  version "1.0.30001434"
+  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001434.tgz"
+  integrity sha512-aOBHrLmTQw//WFa2rcF1If9fa3ypkC1wzqqiKHgfdrXTWcU8C4gKVZT77eQAPWN1APys3+uQ0Df07rKauXGEYA==
 
 cardinal@^2.1.1:
   version "2.1.1"
@@ -3028,6 +3129,17 @@ fast-glob@^3.2.11, fast-glob@^3.2.9:
   version "3.2.11"
   resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.11.tgz#a1172ad95ceb8a16e20caa5c5e56480e5129c1d9"
   integrity sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==
+  dependencies:
+    "@nodelib/fs.stat" "^2.0.2"
+    "@nodelib/fs.walk" "^1.2.3"
+    glob-parent "^5.1.2"
+    merge2 "^1.3.0"
+    micromatch "^4.0.4"
+
+fast-glob@^3.2.12:
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.12.tgz#7f39ec99c2e6ab030337142da9e0c18f37afae80"
+  integrity sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==
   dependencies:
     "@nodelib/fs.stat" "^2.0.2"
     "@nodelib/fs.walk" "^1.2.3"
@@ -4423,6 +4535,14 @@ medusa-core-utils@^1.1.34:
     joi "^17.3.0"
     joi-objectid "^3.0.1"
 
+medusa-core-utils@^1.1.36:
+  version "1.1.36"
+  resolved "https://registry.yarnpkg.com/medusa-core-utils/-/medusa-core-utils-1.1.36.tgz#eea89003e1805f4ed2832c1587660e96cdd7c631"
+  integrity sha512-/F23G4eufZvAN4qqzH6WWipFK0czVQb45w6/2j/yTSJTXOPrYDy0SaTbeiHgE4jnMw9vJv8eDQ4Y7af2GvTjfA==
+  dependencies:
+    joi "^17.3.0"
+    joi-objectid "^3.0.1"
+
 medusa-react@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/medusa-react/-/medusa-react-3.0.1.tgz#218bb834d595e54ed104317f61c21eddb35de82b"
@@ -4437,6 +4557,21 @@ medusa-telemetry@0.0.14:
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/medusa-telemetry/-/medusa-telemetry-0.0.14.tgz#1247e3712ab1092c7318cae3d5d958f5c2873a20"
   integrity sha512-eG5VdU7uA1jQxP9p7SacPjWvYLBAVjHU39Pgvj2bWU8W6uBgCO2L+BGXcUZbr8DAdr9lK9w5IShltVQGjDsoWw==
+  dependencies:
+    axios "^0.21.1"
+    axios-retry "^3.1.9"
+    boxen "^5.0.1"
+    ci-info "^3.2.0"
+    configstore "5.0.1"
+    global "^4.4.0"
+    is-docker "^2.2.1"
+    remove-trailing-slash "^0.1.1"
+    uuid "^8.3.2"
+
+medusa-telemetry@0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/medusa-telemetry/-/medusa-telemetry-0.0.15.tgz#fe78ef1d51845806f669867eb90336bc51f8aba4"
+  integrity sha512-iQ/8a2lUVIVGXKj+by2Vc85eNWAwEAa5RxTQSQpgVOoMy0a/pw951EYQkYsch2cJAVW/tHmWqY0gYmqUuZ0c8A==
   dependencies:
     axios "^0.21.1"
     axios-retry "^3.1.9"
@@ -4547,6 +4682,11 @@ minimist@^1.2.3:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
+
+minimist@^1.2.6:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.7.tgz#daa1c4d91f507390437c6a8bc01078e7000c4d18"
+  integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
 
 minipass@^2.6.0, minipass@^2.9.0:
   version "2.9.0"
@@ -4690,6 +4830,14 @@ netrc-parser@^3.1.6:
   dependencies:
     debug "^3.1.0"
     execa "^0.10.0"
+
+next-sitemap@^3.1.32:
+  version "3.1.32"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.32.tgz#e4a7227cab23b5e5c68bc54d335b86d3ff1e05f8"
+  integrity sha512-jkIKpwLXpWWTPfmDO46+6nu4+qpar4CjvUwCR9rYZHWtzE/wFfaCVFKpGtFMl6MFjpu8GjiE6kWFEa7uF3bzzg==
+  dependencies:
+    "@corex/deepmerge" "^4.0.29"
+    minimist "^1.2.6"
 
 next@^12.2.0:
   version "12.2.0"

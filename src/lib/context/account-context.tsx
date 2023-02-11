@@ -8,6 +8,7 @@ import { useMutation } from "react-query"
 export enum LOGIN_VIEW {
   SIGN_IN = "sign-in",
   REGISTER = "register",
+  RESET = "reset"
 }
 
 interface AccountContext {
@@ -39,6 +40,9 @@ export const AccountProvider = ({ children }: AccountProviderProps) => {
   const loginView = useState<LOGIN_VIEW>(LOGIN_VIEW.SIGN_IN)
 
   const router = useRouter()
+
+  console.log("customer")
+  console.log(customer)
 
   const checkSession = useCallback(() => {
     if (!customer && !retrievingCustomer) {

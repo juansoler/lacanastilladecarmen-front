@@ -3,6 +3,8 @@ import Register from "@modules/account/components/register"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import Login from "../components/login"
+import Reset from "../components/reset"
+
 
 const LoginTemplate = () => {
   const { loginView, customer, retrievingCustomer } = useAccount()
@@ -18,8 +20,19 @@ const LoginTemplate = () => {
 
   return (
     <div className="w-full flex justify-center py-24">
-      {currentView === "sign-in" ? <Login /> : <Register />}
+      {currentView === "sign-in" 
+      ? 
+      <Login /> 
+      :
+      currentView === "reset"
+      ?
+      <Reset />
+      :
+      <Register />
+        
+      }
     </div>
+    
   )
 }
 

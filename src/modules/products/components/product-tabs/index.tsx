@@ -14,11 +14,11 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Product Information",
+        label: "Informacion del producto",
         component: <ProductInfoTab product={product} />,
       },
       {
-        label: "Shipping & Returns",
+        label: "Envío y devoluciones",
         component: <ShippingInfoTab />,
       },
     ]
@@ -66,21 +66,21 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
+            <span className="font-semibold">Pais de origen</span>
             <p>{product.origin_country ? product.origin_country : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
+            <span className="font-semibold">Tipo</span>
             <p>{product.type ? product.type.value : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Weight</span>
+            <span className="font-semibold">Peso</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Dimensions</span>
+            <span className="font-semibold">Dimensiones</span>
             <p>
               {product.length && product.width && product.height
                 ? `${product.length}L x ${product.width}W x ${product.height}H`
@@ -91,7 +91,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       </div>
       {product.tags.length ? (
         <div>
-          <span className="font-semibold">Tags</span>
+          <span className="font-semibold">Etiquetas</span>
         </div>
       ) : null}
     </Tab.Panel>
@@ -105,31 +105,27 @@ const ShippingInfoTab = () => {
         <div className="flex items-start gap-x-2">
           <FastDelivery />
           <div>
-            <span className="font-semibold">Fast delivery</span>
+            <span className="font-semibold">Entrega rápida</span>
             <p className="max-w-sm">
-              Your package will arrive in 3-5 business days at your pick up
-              location or in the comfort of your home.
+              Su paquete llegará a su destino en 3-5 días habiles.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Refresh />
           <div>
-            <span className="font-semibold">Simple exchanges</span>
+            <span className="font-semibold">Devoluciones</span>
             <p className="max-w-sm">
-              Is the fit not quite right? No worries - we&apos;ll exchange your
-              product for a new one.
+              Si no está contento con el pedido, puede realizar la devolución del mismo.
             </p>
           </div>
         </div>
         <div className="flex items-start gap-x-2">
           <Back />
           <div>
-            <span className="font-semibold">Easy returns</span>
+            <span className="font-semibold">Devoluciones rápidas</span>
             <p className="max-w-sm">
-              Just return your product and we&apos;ll refund your money. No
-              questions asked – we&apos;ll do our best to make sure your return
-              is hassle-free.
+              Tan solo devuelve el pedido y te devolvemos el dinero, no realizamos preguntas. 
             </p>
           </div>
         </div>

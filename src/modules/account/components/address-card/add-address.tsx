@@ -89,64 +89,64 @@ const AddAddress: React.FC = () => {
         className="border border-gray-200 p-5 min-h-[220px] h-full w-full flex flex-col justify-between"
         onClick={open}
       >
-        <span className="text-base-semi">New address</span>
+        <span className="text-base-semi">Nueva dirección</span>
         <Plus size={24} />
       </button>
 
       <Modal isOpen={state} close={handleClose}>
-        <Modal.Title>Add address</Modal.Title>
+        <Modal.Title>Añadir dirección</Modal.Title>
         <Modal.Body>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="grid grid-cols-2 gap-x-2">
               <Input
-                label="First name"
+                label="Nombre"
                 {...register("first_name", {
-                  required: "First name is required",
+                  required: "Nombre es obligatorio",
                 })}
                 required
                 errors={errors}
                 autoComplete="given-name"
               />
               <Input
-                label="Last name"
+                label="Apellidos"
                 {...register("last_name", {
-                  required: "Last name is required",
+                  required: "Apellidos son obligatorios",
                 })}
                 required
                 errors={errors}
                 autoComplete="family-name"
               />
             </div>
-            <Input label="Company" {...register("company")} errors={errors} />
+            <Input label="Compañía" {...register("company")} errors={errors} />
             <Input
-              label="Address"
+              label="Dirección"
               {...register("address_1", {
-                required: "Address is required",
+                required: "Dirección es obligatoria",
               })}
               required
               errors={errors}
               autoComplete="address-line1"
             />
             <Input
-              label="Apartment, suite, etc."
+              label="Apartamento, piso, etc."
               {...register("address_2")}
               errors={errors}
               autoComplete="address-line2"
             />
             <div className="grid grid-cols-[144px_1fr] gap-x-2">
               <Input
-                label="Postal code"
+                label="Código Postal"
                 {...register("postal_code", {
-                  required: "Postal code is required",
+                  required: "Codigo postal es obligatorio",
                 })}
                 required
                 errors={errors}
                 autoComplete="postal-code"
               />
               <Input
-                label="City"
+                label="Ciudad"
                 {...register("city", {
-                  required: "City is required",
+                  required: "Ciudad es obligatoria",
                 })}
                 errors={errors}
                 required
@@ -154,8 +154,10 @@ const AddAddress: React.FC = () => {
               />
             </div>
             <Input
-              label="Province / State"
-              {...register("province")}
+              label="Provincia"
+              {...register("province", {
+                required: "Provincia es obligatoria",
+              })}              
               errors={errors}
               autoComplete="address-level1"
             />
@@ -164,7 +166,7 @@ const AddAddress: React.FC = () => {
               autoComplete="country"
             />
             <Input
-              label="Phone"
+              label="Teléfono"
               {...register("phone")}
               errors={errors}
               autoComplete="phone"
@@ -179,10 +181,10 @@ const AddAddress: React.FC = () => {
             className="!bg-gray-200 !text-gray-900 !border-gray-200 min-h-0"
             onClick={handleClose}
           >
-            Cancel
+            Cancelar
           </Button>
           <Button className="min-h-0" onClick={submit} disabled={submitting}>
-            Save
+            Guardar
             {submitting && <Spinner />}
           </Button>
         </Modal.Footer>

@@ -10,8 +10,10 @@ type HeadProps = {
 const Head: React.FC<HeadProps> = ({ title, description, image }) => {
   return (
     <NextHead>
-      <title>{title} | ACME</title>
+      <title>{title} |La Canastilla de Carmen</title>
       <meta itemProp="name" content={title} />
+      <meta name="keywords" content="tienda, ropa, almeria" />
+      <meta name="author" content="jsm" />
       {description && <meta itemProp="description" content={description} />}
       {image && <meta itemProp="image" content={image} />}
       <link rel="icon" href="/favicon.ico" />

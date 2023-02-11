@@ -18,7 +18,7 @@ const SkeletonCartItem = () => {
                 onClick={() => deleteItem(item.id)}
               >
                 <Trash size={14} />
-                <span>Remove</span>
+                <span>Eliminar</span>
               </button>
             </div>
             <div>

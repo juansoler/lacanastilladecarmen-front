@@ -35,7 +35,7 @@ const OrderCard = ({ order }: OrderCardProps) => {
           })}
         </span>
         <span className="pl-2">{`${numberOfLines} ${
-          numberOfLines > 1 ? "items" : "item"
+          numberOfLines > 1 ? "artículos" : "artículo"
         }`}</span>
       </div>
       <div className="grid grid-cols-2 small:grid-cols-4 gap-4 my-4">

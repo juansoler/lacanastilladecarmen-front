@@ -2,6 +2,7 @@ import { useProductActions } from "@lib/context/product-context"
 import useProductPrice from "@lib/hooks/use-product-price"
 import Button from "@modules/common/components/button"
 import OptionSelect from "@modules/products/components/option-select"
+import OptionText from "@modules/products/components/option-text"
 import clsx from "clsx"
 import Link from "next/link"
 import React, { useMemo } from "react"
@@ -12,7 +13,7 @@ type ProductActionsProps = {
 }
 
 const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
-  const { updateOptions, addToCart, options, inStock, variant } =
+  const { updateOptions, updateOptionsText, addToCart, options, optionsText, inStock, variant } =
     useProductActions()
 
   const price = useProductPrice({ id: product.id, variantId: variant?.id })
@@ -39,16 +40,31 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       {product.variants.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">
           {product.options.map((option) => {
-            return (
-              <div key={option.id}>
-                <OptionSelect
-                  option={option}
-                  current={options[option.id]}
-                  updateOption={updateOptions}
-                  title={option.title}
-                />
-              </div>
-            )
+            console.log("option")
+            console.log(option)
+            if (option.title == "Texto personalizado"){
+              return (
+                <div key={option.id}>
+                  <OptionText
+                    option={option}
+                    current={optionsText[option.id]}
+                    updateOptionText={updateOptionsText}
+                    title={option.title}
+                  />
+                </div>
+              )            }else {
+              return (
+                <div key={option.id}>
+                  <OptionSelect
+                    option={option}
+                    current={options[option.id]}
+                    updateOption={updateOptions}
+                    title={option.title}
+                  />
+                </div>
+              )
+            }
+            
           })}
         </div>
       )}
@@ -83,7 +99,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       </div>
 
       <Button onClick={addToCart}>
-        {!inStock ? "Out of stock" : "Add to cart"}
+        {!inStock ? "Sin stock" : "Añadir al carrito"}
       </Button>
     </div>
   )

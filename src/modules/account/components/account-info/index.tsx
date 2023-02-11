@@ -76,7 +76,7 @@ const AccountInfo = ({
           )}
         >
           <div className="bg-green-100 text-green-500 p-4 my-4">
-            <span>{label} updated succesfully</span>
+            <span>{label} Actualizado con éxito</span>
           </div>
         </Disclosure.Panel>
       </Disclosure>
@@ -118,7 +118,7 @@ const AccountInfo = ({
                 className="w-full small:max-w-[140px]"
                 type="submit"
               >
-                Save changes
+                Cambios guardados
               </Button>
             </div>
           </div>
